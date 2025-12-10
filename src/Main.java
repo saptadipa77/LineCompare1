@@ -12,5 +12,7 @@ public class Main {
         Line line2 = new Line(p3, p4);
         System.out.println("Line 1 Length: " + line1.getLength());
         System.out.println("Line 2 Length: " + line2.getLength());
+        Lineequal eq = new Lineequal();
+        System.out.println("Lines Equal? " + eq.areEqual(line1, line2));
     }
 }
