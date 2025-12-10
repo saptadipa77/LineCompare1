@@ -14,5 +14,14 @@ public class Main {
         System.out.println("Line 2 Length: " + line2.getLength());
         Lineequal eq = new Lineequal();
         System.out.println("Lines Equal? " + eq.areEqual(line1, line2));
+        Linecomp cmp = new Linecomp();
+        int result = cmp.compareLines(line1, line2);
+
+        if (result == 0)
+            System.out.println("Lines are Equal");
+        else if (result > 0)
+            System.out.println("Line 1 is Greater");
+        else
+            System.out.println("Line 1 is Smaller");
     }
 }
