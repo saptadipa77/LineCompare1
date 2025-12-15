@@ -2,26 +2,36 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Welcome to Line Comparison Computation Program");
-        Point p1 = new Point(2, 4);
-        Point p2 = new Point(6, 8);
+        System.out.println("=== UC4: Line Comparison using OOP, equals(), compareTo() ===");
 
-        Point p3 = new Point(1, 1);
-        Point p4 = new Point(4, 5);
-        Line line1 = new Line(p1, p2);
-        Line line2 = new Line(p3, p4);
-        System.out.println("Line 1 Length: " + line1.getLength());
-        System.out.println("Line 2 Length: " + line2.getLength());
-        Lineequal eq = new Lineequal();
-        System.out.println("Lines Equal? " + eq.areEqual(line1, line2));
-        Linecomp cmp = new Linecomp();
-        int result = cmp.compareLines(line1, line2);
+        Point a1 = new Point(2, 3);
+        Point a2 = new Point(6, 7);
 
-        if (result == 0)
-            System.out.println("Lines are Equal");
-        else if (result > 0)
-            System.out.println("Line 1 is Greater");
-        else
-            System.out.println("Line 1 is Smaller");
+        Point b1 = new Point(1, 1);
+        Point b2 = new Point(5, 5);
+
+        Line line1 = new Line(a1, a2);
+        Line line2 = new Line(b1, b2);
+
+        System.out.println("Length of Line 1: " + line1.getLength());
+        System.out.println("Length of Line 2: " + line2.getLength());
+
+        // Using equals()
+        if (line1.equals(line2)) {
+            System.out.println("Line 1 and Line 2 are EQUAL.");
+        } else {
+            System.out.println("Line 1 and Line 2 are NOT equal.");
+        }
+
+        // Using compareTo()
+        int result = line1.compareTo(line2);
+
+        if (result > 0) {
+            System.out.println("Line 1 is GREATER than Line 2.");
+        } else if (result < 0) {
+            System.out.println("Line 1 is SMALLER than Line 2.");
+        } else {
+            System.out.println("Both lines are EQUAL in length.");
+        }
     }
 }
